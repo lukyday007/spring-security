@@ -1,0 +1,26 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/jwtsecurity?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+        username: root
+        password: 09870987
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                format_sql: true
+                show_sql: true
+
+    mustache:
+        suffix: .mustache
+        prefix: classpath:/templates/
+        check-template-location: false
+        servlet:
+            expose-request-attributes: true
+
+server:
+    servlet:
+        session:
+            timeout: 1800s  # 초 단위 (30분)
